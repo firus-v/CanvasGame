@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+#app{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+canvas{
+    background: #6e738b;
+}
