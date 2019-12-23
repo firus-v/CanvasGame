@@ -1,4 +1,5 @@
-export default class FPSCounter {
+import Game from './Game'
+class FPSCounter{
     x = 0;
     y = 0;
     count = 0;
@@ -13,17 +14,24 @@ export default class FPSCounter {
             this.text = this.count;
             this.count=0;
         }, 100);
+
+        Game.stack.Add(this.render.bind(this));
     }
 
-    render(ctx) {
+    render() {
         this.count++;
-        ctx.globalAlpha = 0.7;
-        ctx.fillStyle = "#000000";
-        ctx.fillRect(this.x, this.y, 70, 30);
-        ctx.fillStyle = "#fff";
-        ctx.font = "14px sans-serif";
-        ctx.fillText(this.text*10+' fps', this.x+10, this.y+20, 100);
+        Game.ctx.globalAlpha = 0.7;
+        Game.ctx.fillStyle = "#000000";
+        Game.ctx.fillRect(this.x, this.y, 70, 30);
+        Game.ctx.fillStyle = "#fff";
+        Game.ctx.font = "14px sans-serif";
+        Game.ctx.fillText(this.text*10+' fps', this.x+10, this.y+20, 100);
 
-        ctx.globalAlpha = 1;
+        Game.ctx.globalAlpha = 1;
+    }
+    SetPosition(x,y){
+        this.x=x;
+        this.y=y;
     }
 }
+export default new FPSCounter(10,10);

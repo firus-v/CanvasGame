@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    font-family: sans-serif;
 }
 #app{
     position: absolute;
@@ -10,5 +11,76 @@ body{
     top: 0;
 }
 canvas{
-    background: #6e738b;
+    background: #2b323c;
+}
+.main-menu{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 10px 10px 0 0;
+    width: 500px;
+    overflow: hidden;
+}
+.main-menu .title{
+    background: #6ebd48;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+.main-menu .content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button{
+    padding: 10px 20px;
+    color: #d8d8d8;
+    font-size: 16px;
+    background: #2b323c;
+    margin: 10px;
+    width: 250px;
+    border:0;
+    border-bottom: 5px solid #476c43;
+    position: relative;
+    cursor: pointer;
+}
+.button::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    right: 50%;
+    height: 5px;
+    background: #71c049;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+}
+.button:hover::after{
+    left: 0;
+    right: 0;
+}
+.main-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.main-menu .load_elem{
+    padding: 10px;
+    background: #2b323c;
+    margin: 10px;
+    color: #fff;
+    border-radius: 4px;
+    width: 250px;
+    cursor: pointer
+}
+.main-menu input{
+    background: #2b323c;
+    padding: 10px;
+    border: 0;
+    width: 300px;
+    color: #fff;
 }
