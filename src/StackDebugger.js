@@ -9,11 +9,7 @@ class StackDebugger{
         this.y = y;
         this.isShow = isShow;
     }
-    StartRender(){
-        Game.stack.Add(this.renderStackDebugger.bind(this));
-    }
-
-    renderStackDebugger() {
+    Render() {
         let stack = Game.stackUpdate;
         Game.ctx.fillStyle = "#666";
         Game.ctx.font = "14px sans-serif";

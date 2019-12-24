@@ -16,10 +16,7 @@ class FPSCounter{
         }, 100);
 
     }
-    StartRender(){
-        Game.stack.Add(this.render.bind(this));
-    }
-    render() {
+    Render() {
         this.count++;
         Game.ctx.globalAlpha = 0.7;
         Game.ctx.fillStyle = "#000000";
